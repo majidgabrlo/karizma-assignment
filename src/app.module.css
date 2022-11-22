@@ -1,6 +1,7 @@
 .app {
   height: 100vh;
   background: #808080;
+  padding-bottom: 0;
 }
 
 .clearbutton {

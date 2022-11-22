@@ -13,6 +13,7 @@ function Column({ sx, children }: BoxProps) {
                 fontSize: '0.875rem',
                 fontWeight: '700',
                 overflowY: "scroll",
+                marginBottom:0,
                 ...sx,
             }}
             children={children}
