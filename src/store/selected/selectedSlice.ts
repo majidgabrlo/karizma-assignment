@@ -19,10 +19,16 @@ export const SelectedItemsSlice = createSlice({
     },
     remove: (state, { payload }: PayloadAction<{ id: number }>) => {
       const { id } = payload;
-      state.splice(state.findIndex((item) => item.id === id), 1);
+      state.splice(
+        state.findIndex((item) => item.id === id),
+        1
+      );
+    },
+    clear: (state) => {
+      return [];
     },
   },
 });
 
-export const { add, remove } = SelectedItemsSlice.actions;
+export const { add, remove, clear } = SelectedItemsSlice.actions;
 export default SelectedItemsSlice.reducer;

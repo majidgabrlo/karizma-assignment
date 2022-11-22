@@ -1,4 +1,10 @@
-.app{
-    height: 100vh;
-    background:#808080;
+.app {
+  height: 100vh;
+  background: #808080;
+}
+
+.clearbutton {
+  margin:.5rem auto !important;
+  width: 90%;
+  text-transform: uppercase;
 }

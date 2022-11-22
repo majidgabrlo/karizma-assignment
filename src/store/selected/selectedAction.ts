@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { add, remove } from "./selectedSlice";
+import { add, remove,clear } from "./selectedSlice";
 export const addNewItem = (title: string) => (dispatch: Dispatch) => {
   dispatch(add({ title }));
 };
@@ -7,3 +7,7 @@ export const addNewItem = (title: string) => (dispatch: Dispatch) => {
 export const removeItem = (id: number) => (dispatch: Dispatch) => {
   dispatch(remove({ id }));
 };
+
+export const removeAll = () => (dispatch: Dispatch) => {
+    dispatch(clear());
+  };
