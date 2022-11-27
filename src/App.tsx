@@ -6,7 +6,7 @@ import People from './components/People';
 import Products from './components/Products';
 import SelectedItem from './components/SelectedItem';
 import { useAppDispatch } from './store/hooks';
-import { removeAll } from './store/selected/selectedAction';
+import { clear } from './store/selected/selectedSlice';
 
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
                 <Column><SelectedItem /></Column>
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-                <Button onClick={() => { dispatch(removeAll()) }} className={styles.clearbutton} variant="contained">Clear list</Button>
-                <Button onClick={() => { dispatch(removeAll()) }} className={styles.clearbutton} variant="contained">Clear list</Button>
+                <Button onClick={() => { dispatch(clear()) }} className={styles.clearbutton} variant="contained">Clear list</Button>
+                <Button onClick={() => { dispatch(clear()) }} className={styles.clearbutton} variant="contained">Clear list</Button>
             </Box>
         </div>
     )

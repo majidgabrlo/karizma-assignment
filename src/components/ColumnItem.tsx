@@ -6,8 +6,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ImageIcon from '@mui/icons-material/Image';
 import { useAppDispatch } from '../store/hooks';
-import { addNewItem } from '../store/selected/selectedAction';
-
+import {add} from '../store/selected/selectedSlice'
 type ColumnItemProps = {
     title: string,
     subtitle: string
@@ -15,7 +14,7 @@ type ColumnItemProps = {
 const ColumnItem: FC<ColumnItemProps> = ({ title, subtitle }) => {
     const dispatch = useAppDispatch();
     return (
-        <div onClick={() => {dispatch(addNewItem(title))}}>
+        <div onClick={() => {dispatch(add({title}))}}>
             <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 <ListItem>
                     <ListItemAvatar>

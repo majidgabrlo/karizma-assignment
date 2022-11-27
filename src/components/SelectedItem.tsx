@@ -2,7 +2,7 @@ import { TextField } from '@mui/material';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import Chip from '@mui/material/Chip';
-import { removeItem } from "../store/selected/selectedAction";
+import { remove } from "../store/selected/selectedSlice";
 
 function SelectedItem() {
     const dispatch = useAppDispatch();
@@ -14,7 +14,7 @@ function SelectedItem() {
     return (
         <div>
             <TextField fullWidth margin={'dense'} onChange={(e) => { setFilter(e.target.value) }} value={filter} id="outlined-basic" label="Filter" />
-            {selectedItems.filter(item => item.title.toLowerCase().includes(filter.toLowerCase())).map(item => <Chip key={item.id} style={{ margin: ".3rem" }} clickable onClick={() => { dispatch(removeItem(item.id)) }} label={item.title} color="primary" />)}
+            {selectedItems.filter(item => item.title.toLowerCase().includes(filter.toLowerCase())).map(item => <Chip key={item.id} style={{ margin: ".3rem" }} clickable onClick={() => { dispatch(remove({id:item.id})) }} label={item.title} color="primary" />)}
         </div>
     )
 }
